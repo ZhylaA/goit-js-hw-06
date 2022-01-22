@@ -16,9 +16,17 @@ const images = [
 // В HTML есть список ul.gallery.
 
 // <ul class="gallery"></ul>
+
 // Используй массив объектов images для создания элементов <img> вложенных в < li >.
 // Для создания разметки используй шаблонные строки и метод insertAdjacentHTML().
 
 // Все элементы галереи должны добавляться в DOM за одну операцию вставки.
 // Добавь минимальное оформление галереи флексбоксами или гридами через CSS классы.
-const gallery = document.querySelector('ul.gallery');
+
+const gallery = document.querySelector('.gallery');
+
+const ulGal = images.map((imag) => `<li><img class="gallery-img" src="${imag.url}" alt="${imag.alt}"/></li>`).join("");
+// images.forEach(imag => { (ulGal.push(`<li><img class="gallery-img" src="${imag.url}" alt="${imag.alt}"/></li>`)).join(" ");});
+gallery.insertAdjacentHTML("beforeend", ulGal);
+// console.log(ulGal);
+gallery.classList.add("gallery-item");
