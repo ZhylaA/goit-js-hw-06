@@ -28,7 +28,7 @@ loginForm.addEventListener('submit', (event) => {
     event.preventDefault();
     const email=event.currentTarget.elements.email.value;
     const password=event.currentTarget.elements.password.value;
-    const dataForm = { email, password };
+    // const dataForm = { email, password };
     // console.log(dataForm);
     if (email === ""||password==="") { console.log('all fields must be filled');}
 });
