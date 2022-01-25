@@ -23,12 +23,26 @@
 //     Для доступа к элементам формы используй свойство elements.
 // // Выведи обьект с введенными данными в консоль 
 // и очисти значения полей формы методом reset.
+// const loginForm = document.querySelector('.login-form');
+// loginForm.addEventListener('submit', (event) => {
+//     event.preventDefault();
+//     const email=event.currentTarget.elements.email.value;
+//     const password=event.currentTarget.elements.password.value;
+//     // const dataForm = { email, password };
+//     // console.log(dataForm);
+//     if (email === ""||password==="") { console.log('all fields must be filled');}
+// });
+// console.log()
+
 const loginForm = document.querySelector('.login-form');
 loginForm.addEventListener('submit', (event) => {
     event.preventDefault();
-    const email=event.currentTarget.elements.email.value;
-    const password=event.currentTarget.elements.password.value;
-    // const dataForm = { email, password };
-    // console.log(dataForm);
-    if (email === ""||password==="") { console.log('all fields must be filled');}
+    const { elements: { email, password } } = event.currentTarget ;
+    // const email=event.currentTarget.elements.email.value;
+    // const password=event.currentTarget.elements.password.value;
+    if (email.value === "" || password.value === "")
+    { return alert('all fields must be filled'); }
+    console.log(`Email: ${email.value}, Password: ${password.value}`);
+    event.currentTarget.reset();
+
 });

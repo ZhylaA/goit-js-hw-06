@@ -31,13 +31,13 @@
 const input = document.querySelector('#validation-input');
 input.addEventListener('blur', onCheckInput);
 function onCheckInput() {
-    input.classList.add('invalid');
-    input.classList.add('valid');
+    // input.classList.add('invalid');
+    // input.classList.add('valid');
     if (input.value.length === Number(input.dataset.length)) {
         input.classList.add('valid');
         input.classList.remove('invalid');
     }else{input.classList.remove('valid');
         input.classList.add('invalid');}
 }
-
-
+// console.log(Number(input.dataset.length));
+// console.log(input.dataset.length);
