@@ -26,10 +26,18 @@
 // }
 
 
+
+
 const input = document.querySelector('#validation-input');
 input.addEventListener('blur', onCheckInput);
 function onCheckInput() {
-    if (input.data-length === input.textContent.valueOf.lengt)
-    { input.classList.add('valid'); } else { input.classList.add('invalid'); }
-};
-console.log(onCheckInput);
+    input.classList.add('invalid');
+    input.classList.add('valid');
+    if (input.value.length === Number(input.dataset.length)) {
+        input.classList.add('valid');
+        input.classList.remove('invalid');
+    }else{input.classList.remove('valid');
+        input.classList.add('invalid');}
+}
+
+
