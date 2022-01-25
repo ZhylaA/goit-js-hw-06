@@ -19,13 +19,13 @@ let counterValue = 0;
 decrement.addEventListener('click', () => {
     console.log('click decrement button');
     value.addEventListener('click', onClickCounterValue);
-    counterValue += 1;
+    counterValue -= 1;
     value.textContent = counterValue;
 });
 increment.addEventListener('click', () => {
     console.log('clik on increment button');
     value.removeEventListener('click', onClickCounterValue);
-    counterValue -= 1;
+    counterValue += 1;
     value.textContent = counterValue;
 });
 function onClickCounterValue() { console.log('click counterValue') };
